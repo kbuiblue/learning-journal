@@ -1,0 +1,126 @@
+{
+    "blog1": {
+        "date": "JULY 23, 2022",
+        "title": "My new journey as a bootcamp student.",
+        "sections": [
+            {
+                "type": "paragraph",
+                "text": "After several months of learning in the Frontend Developer Career Path, I've made the big jump over to the Bootcamp to get expert code reviews of my Solo Projects projects and meet like-minded peers."
+            },
+            {
+                "type": "image",
+                "url": "https://cdn-media-1.freecodecamp.org/images/1*HJnhZfsUqdgWcAMIlbqp-w.png"
+            },
+            {
+                "heading": "How I stay committed to learning",
+                "content": [
+                    {
+                        "type": "paragraph",
+                        "text": "I like to think of myself as a lifelong learner. I used to spend hours and hours learning, then try to create simple projects using what I learned or work new techniques into existing projects."
+                    },
+                    {
+                        "type": "paragraph",
+                        "text": "While that was fun, I felt like it would be helpful to share what I was learning and most things about my journey with the world."
+                    }
+                ]
+            },
+            {
+                "heading": "How I got started",
+                "content": [
+                    {
+                        "type": "paragraph",
+                        "text": "I started simple and gradually grew my learning journal site. I would take notes about what I was learning. After each learning session, I'd use my notes to not only reflect on what I learned but also write short summaries of what I learned using my own words."
+                    },
+                    {
+                        "type": "paragraph",
+                        "text": "That helped me grok what I was learning, and I realized that posting my learning summaries was also helping others learn and stay motivated."
+                    }
+                ]
+            }
+        ]
+    },
+    "blog2": {
+        "date": "JULY 23, 2022",
+        "title": "Blog One",
+        "sections": [
+            {
+                "type": "paragraph",
+                "text": "I'm excited to start a new learning journey as a Scrimba Bootcamp student! After several months of learning in the Frontend Developer Career Path."
+            },
+            {
+                "type": "image",
+                "url": "https://res.cloudinary.com/practicaldev/image/fetch/s--H7PZyWOT--/c_imagga_scale,f_auto,fl_progressive,h_420,q_auto,w_1000/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/tyqdqrg4w048b6o1iclq.jpg"
+            }
+        ]
+    },
+    "blog3": {
+        "date": "JULY 23, 2022",
+        "title": "Blog Two",
+        "sections": [
+            {
+                "type": "paragraph",
+                "text": "I'm excited to start a new learning journey as a Scrimba Bootcamp student! After several months of learning in the Frontend Developer Career Path."
+            },
+            {
+                "type": "image",
+                "url": "https://www.bbva.com/wp-content/uploads/2018/12/bombilla-idea-innovacion-bbva.jpg"
+            }
+        ]
+    },
+    "blog4": {
+        "date": "JULY 23, 2022",
+        "title": "Blog Three",
+        "sections": [
+            {
+                "type": "paragraph",
+                "text": "I'm excited to start a new learning journey as a Scrimba Bootcamp student! After several months of learning in the Frontend Developer Career Path."
+            },
+            {
+                "type": "image",
+                "url": "https://www.nray.dev/_astro/neon-abstract.9622901c_ttAFr.avif"
+            }
+        ]
+    },
+    "blog5": {
+        "date": "JULY 23, 2022",
+        "title": "Blog Four",
+        "sections": [
+            {
+                "type": "paragraph",
+                "text": "I'm excited to start a new learning journey as a Scrimba Bootcamp student! After several months of learning in the Frontend Developer Career Path."
+            },
+            {
+                "type": "image",
+                "url": "https://images.unsplash.com/photo-1526137081-c1e27f98c788?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80"
+            }
+        ]
+    },
+    "blog6": {
+        "date": "JULY 23, 2022",
+        "title": "Blog Five",
+        "sections": [
+            {
+                "type": "paragraph",
+                "text": "I'm excited to start a new learning journey as a Scrimba Bootcamp student! After several months of learning in the Frontend Developer Career Path."
+            },
+            {
+                "type": "image",
+                "url": "https://about.gitlab.com/images/blogimages/2022-11-04-how-to-automate-testing-for-a-react-application-with-gitlab/cover.jpg"
+            }
+        ]
+    },
+    "blog7": {
+        "date": "JULY 23, 2022",
+        "title": "Blog Five",
+        "sections": [
+            {
+                "type": "paragraph",
+                "text": "I'm excited to start a new learning journey as a Scrimba Bootcamp student! After several months of learning in the Frontend Developer Career Path."
+            },
+            {
+                "type": "image",
+                "url": "https://media.licdn.com/dms/image/C5612AQGzDf-O2vFAKw/article-cover_image-shrink_720_1280/0/1587668672769?e=1692835200&v=beta&t=I5cnuRVk8tIlRO0n0Ayz5gAxA38Yf0Qum7t6JUNMscQ"
+            }
+        ]
+    }
+}
