@@ -22,35 +22,59 @@ blogsInDB.on("value", function (snapshot) {
 function renderHtml(data) {
     let heroHtml = "";
     let contentHtml = "";
+    let heroImageUrl = "";
 
     data.forEach(function ([key, blog]) {
         let html = `
-            <div class="blog">
-                <h2>${blog.title}</h2>
-                <p>Date: ${blog.date}</p>
-                ${renderSections(blog.sections)}
+            <div class="blog" id="${key}">
+                ${key === "blog1" ? '<div class="blog1-content">' : ""}
+                <p class="blog-date">${blog.date}</p>
+                <h2 class="blog-title">${blog.title}</h2>
+                ${renderSections(key, blog.sections)}
+                ${key === "blog1" ? '</div>' : ""}
             </div>
         `;
+
+        const imageSection = blog.sections.find(
+            (section) => section.type === "image"
+        );
+
         if (key === "blog1") {
             heroHtml = html;
+
+            if (imageSection) {
+                heroImageUrl = imageSection.url;
+            }
         } else {
             contentHtml += html;
         }
 
         heroEl.innerHTML = heroHtml;
+
+        const blog1El = document.getElementById("blog1");
+        if (blog1El) {
+            blog1El.style.backgroundImage = `url(${heroImageUrl})`;
+            blog1El.style.backgroundSize = "cover";
+            blog1El.style.backgroundRepeat = "no-repeat";
+            blog1El.style.backgroundPosition = "center";
+            blog1El.classList.add = "blog-image";
+        }
+
         contentEl.innerHTML = contentHtml;
     });
 }
 
-function renderSections(sections) {
+function renderSections(key, sections) {
     let html = "";
     sections.forEach(function (section) {
         switch (section.type) {
             case "paragraph":
-                html += `<p>${section.text}</p>`;
+                html += `<p class="blog-content">${section.text}</p>`;
                 break;
             case "image":
-                html += `<img src="${section.url}" alt="Blog image" />`;
+                if (key !== "blog1") {
+                    html += `<img class="blog-image" src="${section.url}" alt="Blog image" />`;
+                }
                 break;
             case "heading":
                 html += `<h3>${section.content[0].text}</h3>`;

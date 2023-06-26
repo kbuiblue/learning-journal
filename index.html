@@ -6,6 +6,12 @@
         />
         <title>My Learning Journal</title>
         <link rel="stylesheet" href="css/style.css" />
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&family=Source+Sans+3:wght@200;300;400;500;700;800;900&display=swap"
+            rel="stylesheet"
+        />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
         <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-database.js"></script>
@@ -13,8 +19,10 @@
     <body>
         <header>
             <nav>
-                <img class="logo" />
-                <h2>My Learning Journal</h2>
+                <div class="logo-container">
+                    <img class="logo" src="img\image 17.png" />
+                    <h2>My Learning Journal</h2>
+                </div>
                 <ul>
                     <li>Home</li>
                     <li>About Me</li>
@@ -28,8 +36,10 @@
             <section class="content"></section>
         </main>
         <footer>
-            <h4>My Learning Journal</h4>
-            <p>Copyright ©2022</p>
+            <div class="footer-text">
+                <h4>My Learning Journal</h4>
+                <p>Copyright ©2022</p>
+            </div>
         </footer>
         <script src="./index.js" type="module"></script>
     </body>
