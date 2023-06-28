@@ -50,7 +50,7 @@ header .logo {
     margin: 0.5em auto 0.25em auto;
     gap: 0.5em;
   }
-  header ul li {
+  header nav ul li {
     display: inline-block;
     padding: 0.25em;
     text-align: center;
@@ -58,7 +58,7 @@ header .logo {
     margin-top: 0.25em;
     border: 2px solid #000000;
   }
-  header ul li:active {
+  header nav ul li:active {
     color: #fff;
     background-color: #000000;
   }
@@ -78,23 +78,23 @@ header .logo {
     width: -moz-fit-content;
     width: fit-content;
   }
-  header .logo-container {
+  header nav ul li {
+    margin-left: 1em;
+    font-size: 0.9em;
+  }
+  header nav .logo-container {
     width: 140%;
     gap: 5px;
   }
-  header .logo {
+  header nav .logo-container .logo {
     width: 10%;
     height: 10%;
-  }
-  header .hero .blog {
-    min-height: 250px;
   }
   header h2 {
     font-size: 0.9em;
   }
-  header ul li {
-    margin-left: 1em;
-    font-size: 0.9em;
+  header .hero .blog {
+    min-height: 250px;
   }
 }
 
@@ -115,6 +115,14 @@ header .logo {
 .hero .blog-title {
   font-size: 1.5rem;
 }
+.hero .blog1-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 2em 1.5em 1.5em 1.5em;
+  text-shadow: 1px 1px 2px #000000;
+}
 
 .content {
   padding: 0 2em;
@@ -133,6 +141,9 @@ header .logo {
   min-height: fit-content;
   -o-object-fit: cover;
      object-fit: cover;
+  min-height: 180px;
+  max-height: 200px;
+  max-width: 310px;
 }
 
 .blog-date {
@@ -153,15 +164,6 @@ header .logo {
   order: 4;
 }
 
-.blog1-content {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: flex-start;
-  padding: 2em 1.5em 1.5em 1.5em;
-  text-shadow: 1px 1px 2px #000000;
-}
-
 .view-more {
   font-weight: 700;
   text-align: center;
@@ -169,18 +171,12 @@ header .logo {
   margin-bottom: 2em;
 }
 
-.blog-image {
-  min-height: 180px;
-  max-height: 200px;
-  max-width: 310px;
-}
-
 @media only screen and (max-width: 350px) {
   .hero .blog {
     min-height: 250px;
   }
   .content .blog {
-    margin-bottom: 1.5em;
+    margin: 0 0 1.5em 0;
   }
 }
 @media only screen and (min-width: 351px) and (max-width: 450px) {
@@ -192,7 +188,6 @@ header .logo {
   }
   .content .blog {
     width: 90%;
-    margin-bottom: 1.5em;
     margin: 0 0 1.5em 0;
   }
   .blog-content {

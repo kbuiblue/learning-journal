@@ -1,0 +1,116 @@
+header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    nav {
+        display: flex;
+        width: 100%;
+        justify-content: space-between;
+        align-items: center;
+        padding: $spacingMedium 0;
+
+        ul {
+            display: flex;
+            margin: 0;
+            width: 100%;
+            align-items: baseline;
+            text-transform: uppercase;
+        }
+
+        li {
+            width: max-content;
+            list-style-type: none;
+            cursor: pointer;
+        }
+    }
+
+    .logo-container {
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        flex-wrap: nowrap;
+        width: 95%;
+        gap: 10px;
+    }
+
+    .logo {
+        width: $spacingMedium;
+        height: $spacingMedium;
+    }
+
+    @media only screen and (max-width: 350px) {
+        nav {
+            width: 60%;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+
+            ul {
+                width: 60%;
+                flex-direction: column;
+                justify-content: space-around;
+                padding: $spacingSmaller 0;
+                margin: $spacingSmall auto $spacingSmaller auto;
+                gap: $spacingSmall;
+
+                li {
+                    display: inline-block;
+                    padding: $spacingSmaller;
+                    text-align: center;
+                    width: 100%;
+                    margin-top: $spacingSmaller;
+                    border: 2px solid $darkColorText;
+
+                    &:active {
+                        color: $lightColorText;
+                        background-color: $darkColorText;
+                    }
+                }
+            }
+
+            .blog-image {
+                min-height: 150px;
+                max-height: 200px;
+                max-width: 310px;
+            }
+        }
+    }
+
+    @media only screen and (min-width: 351px) and (max-width: 450px) {
+        nav {
+            width: 90%;
+            margin: 0 1em;
+
+            ul {
+                justify-content: flex-end;
+                width: fit-content;
+
+                li {
+                    margin-left: $spacingRegular;
+                    font-size: 0.9em;
+                }
+            }
+
+            .logo-container {
+                width: 140%;
+                gap: 5px;
+
+                .logo {
+                    width: 10%;
+                    height: 10%;
+                }
+            }
+        }
+
+        h2 {
+            font-size: 0.9em;
+        }
+
+        .hero {
+            .blog {
+                min-height: 250px;
+            }
+        }
+    }
+}
