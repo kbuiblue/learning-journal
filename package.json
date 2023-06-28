@@ -1,17 +1,20 @@
 {
     "name": "project",
     "devDependencies": {
+        "concurrently": "^8.2.0",
+        "sass": "^1.63.6",
         "vite": "latest"
     },
     "scripts": {
         "start": "vite",
         "dev": "vite",
         "build": "vite build",
-        "preview": "vite preview"
+        "preview": "vite preview",
+        "sass": "sass --watch scss:src/css",
+        "dev:watch": "concurrently \"npm run dev\" \"npm run sass\""
     },
     "type": "module",
     "dependencies": {
-        "normalize.css": "^8.0.1",
-        "sass": "^1.63.6"
+        "normalize.css": "^8.0.1"
     }
 }
