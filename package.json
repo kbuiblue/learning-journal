@@ -9,5 +9,8 @@
         "build": "vite build",
         "preview": "vite preview"
     },
-    "type": "module"
+    "type": "module",
+    "dependencies": {
+        "normalize.css": "^8.0.1"
+    }
 }

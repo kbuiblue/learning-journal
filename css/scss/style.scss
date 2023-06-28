@@ -1,0 +1,47 @@
+@import "./variables";
+@import "./header";
+@import "./main.scss";
+
+* {
+    box-sizing: border-box;
+}
+
+html {
+    font-family: $bodyFonts;
+}
+
+
+body {
+    margin: 0 auto;
+}
+
+h2 {
+    font-family: $logoFonts;
+    font-weight: $boldFont;
+    font-size: $regularFont;
+    margin: 0;
+}
+
+main {
+    width: 100%;
+    margin: 0 auto;
+}
+
+
+footer {
+    text-align: center;
+    background-color: $darkColorFooter;
+
+    h4,
+    p {
+        margin: 0;
+    }
+}
+
+.footer-text {
+    font-size: $smallFont;
+    padding: $spacingLarger;
+    color: $lightColorText;
+}
+
+

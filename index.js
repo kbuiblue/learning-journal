@@ -57,6 +57,7 @@ function renderHtml(data) {
             blog1El.style.backgroundSize = "cover";
             blog1El.style.backgroundRepeat = "no-repeat";
             blog1El.style.backgroundPosition = "center";
+
             blog1El.classList.add = "blog-image";
         }
 
