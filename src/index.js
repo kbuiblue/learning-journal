@@ -45,13 +45,15 @@ function renderHtml(data, isInitialRender) {
     data.every(function ([key, blog]) {
         if (blogStartIndex === 0 && isInitialRender) {
             heroHtml = `
-            <div class="blog" id="${key}">
-                <div class="blog1-content">
-                    <p class="blog-date">${blog.date}</p>
-                    <h2 class="blog-title">${blog.title}</h2>
-                    ${renderSections(key, blog.sections)}
+            <a href="hero-blog.html">
+                <div class="blog" id="${key}">
+                    <div class="blog1-content">
+                        <p class="blog-date">${blog.date}</p>
+                        <h2 class="blog-title">${blog.title}</h2>
+                        ${renderSections(key, blog.sections)}
+                    </div>
                 </div>
-            </div>
+            </a>
         `;
         } else {
             contentHtml += `

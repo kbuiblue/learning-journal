@@ -81,7 +81,7 @@ header .logo {
     font-size: 0.9em;
   }
   header nav .logo-container {
-    width: 140%;
+    width: 120%;
     gap: 5px;
   }
   header nav .logo-container .logo {
@@ -122,6 +122,7 @@ header .logo {
 }
 
 .content {
+  min-height: 1050px;
   padding: 0 2em;
   margin: 3em auto 0 auto;
 }
@@ -134,8 +135,8 @@ header .logo {
 
 .blog-image {
   order: 1;
-  min-height: fit-content;
   object-fit: cover;
+  height: fit-content;
   min-height: 180px;
   max-height: 200px;
   max-width: 310px;
@@ -164,17 +165,24 @@ header .logo {
   text-align: center;
   text-decoration: underline;
   margin-bottom: 2em;
+  cursor: pointer;
 }
 
 @media only screen and (max-width: 350px) {
-  .hero .blog {
+  .hero {
     min-height: 250px;
+  }
+  .hero .blog {
+    min-height: 300px;
   }
   .content .blog {
     margin: 0 0 1.5em 0;
   }
 }
 @media only screen and (min-width: 351px) and (max-width: 450px) {
+  .hero {
+    min-height: 250px;
+  }
   .content {
     display: flex;
     flex-direction: column;
@@ -183,10 +191,30 @@ header .logo {
   }
   .content .blog {
     width: 90%;
+    min-height: 300px;
     margin: 0 0 1.5em 0;
   }
   .blog-content {
     font-size: 0.9rem;
+  }
+}
+.footer-text {
+  font-size: 0.75rem;
+  padding: 2.5em;
+  color: #fff;
+}
+
+.skeleton {
+  opacity: 0.7;
+  animation: skeleton-loading 1s linear infinite alternate;
+}
+
+@keyframes skeleton-loading {
+  0% {
+    background-color: hsl(200, 20%, 70%);
+  }
+  100% {
+    background-color: hsl(200, 20%, 95%);
   }
 }
 * {
@@ -213,6 +241,19 @@ main {
   margin: 0 auto;
 }
 
+a {
+  text-decoration: none;
+  border-color: transparent;
+  color: #000000;
+  cursor: pointer;
+}
+
+a:hover, a:active {
+  color: #fff;
+  text-shadow: 2px 2px 3px #202020;
+  text-decoration: none;
+}
+
 footer {
   text-align: center;
   background-color: #202020;
@@ -220,12 +261,6 @@ footer {
 footer h4,
 footer p {
   margin: 0;
-}
-
-.footer-text {
-  font-size: 0.75rem;
-  padding: 2.5em;
-  color: #fff;
 }
 
 /*# sourceMappingURL=style.css.map */

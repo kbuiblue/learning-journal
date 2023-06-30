@@ -93,7 +93,7 @@ header {
             }
 
             .logo-container {
-                width: 140%;
+                width: 120%;
                 gap: 5px;
 
                 .logo {
@@ -107,8 +107,10 @@ header {
             font-size: 0.9em;
         }
 
-        .hero .blog {
-            min-height: 250px;
+        .hero {
+            .blog {
+                min-height: 250px;
+            }
         }
     }
 }

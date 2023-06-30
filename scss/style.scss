@@ -1,6 +1,8 @@
 @import "./variables";
 @import "./header";
 @import "./main.scss";
+@import "./footer.scss";
+@import "./abstract.scss";
 
 * {
     box-sizing: border-box;
@@ -27,6 +29,19 @@ main {
     margin: 0 auto;
 }
 
+a {
+    text-decoration: none;
+    border-color: transparent;
+    color: #000000;
+    cursor: pointer;
+} 
+
+a:hover, a:active {
+    color: #fff;
+    text-shadow: 2px 2px 3px #202020;
+    text-decoration: none;
+}
+
 
 footer {
     text-align: center;
@@ -38,10 +53,5 @@ footer {
     }
 }
 
-.footer-text {
-    font-size: $smallFont;
-    padding: $spacingLarger;
-    color: $lightColorText;
-}
 
 
