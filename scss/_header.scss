@@ -61,11 +61,11 @@ header {
                     width: 100%;
                     margin-top: $spacingSmaller;
                     border: 2px solid $darkColorText;
+                }
 
-                    &:active {
-                        color: $lightColorText;
-                        background-color: $darkColorText;
-                    }
+                li:active {
+                    color: $lightColorText;
+                    background-color: $darkColorText;
                 }
             }
 
@@ -107,10 +107,8 @@ header {
             font-size: 0.9em;
         }
 
-        .hero {
-            .blog {
-                min-height: 250px;
-            }
+        .hero .blog {
+            min-height: 250px;
         }
     }
 }

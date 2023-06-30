@@ -1,5 +1,5 @@
 {
-    "name": "project",
+    "name": "learning-journal",
     "devDependencies": {
         "concurrently": "^8.2.0",
         "sass": "^1.63.6",

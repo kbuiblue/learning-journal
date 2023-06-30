@@ -74,16 +74,12 @@
 }
 
 @media only screen and (max-width: 350px) {
-    .hero {
-        .blog {
-            min-height: 250px;
-        }
+    .hero .blog {
+        min-height: 250px;
     }
     
-    .content {
-        .blog {
-            margin: 0 0 $spacingMedium 0;
-        }
+    .content .blog {
+        margin: 0 0 $spacingMedium 0;
     }
         
 }
