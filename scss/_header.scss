@@ -47,17 +47,19 @@ header {
             align-items: center;
 
             ul {
-                width: 60%;
+                width: 80%;
                 flex-direction: column;
                 justify-content: space-around;
+                align-items: center;
                 padding: $spacingSmaller 0;
-                margin: $spacingSmall auto $spacingSmaller auto;
+                margin-top: $spacingSmall;
                 gap: $spacingSmall;
 
                 li {
                     display: inline-block;
                     padding: $spacingSmaller;
                     text-align: center;
+                    align-self: center;;
                     width: 100%;
                     margin-top: $spacingSmaller;
                     border: 2px solid $darkColorText;
@@ -66,6 +68,10 @@ header {
                 li:active {
                     color: $lightColorText;
                     background-color: $darkColorText;
+                }
+
+                a {
+                    width: 100%;
                 }
             }
 

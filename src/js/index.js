@@ -11,40 +11,29 @@ const contentEl = document.querySelector(".content");
 
 const BLOGS_PER_PAGE = 3;
 
-let blogStartIndex = 0;
+let blogStartIndex = 1;
 let data;
 
 blogsInDB.on("value", function (snapshot) {
     if (snapshot.exists()) {
         data = Object.entries(snapshot.val());
-        renderHtml(data, true);
+
+        if (data[0][0] === "blog1") {
+            renderHero(data[0][0], data[0][1]);
+        }
+
+        renderContent(data.slice(1));
     } else {
-        console.log("No data available");
+        console.error("No data available");
     }
 });
 
-document.addEventListener("click", function (e) {
-    if (e.target.classList.contains("view-more")) {
-        if (data.length > blogStartIndex) {
-            blogStartIndex++;
-        }
-
-        const partialData = data.slice(blogStartIndex);
-
-        if (partialData.length >= 1) {
-            renderHtml(partialData, false);
-        }
-    }
-});
-
-function renderHtml(data, isInitialRender) {
+function renderHero(key, blog) {
     let heroHtml = "";
-    let contentHtml = "";
     let heroImageUrl = "";
 
-    data.every(function ([key, blog]) {
-        if (blogStartIndex === 0 && isInitialRender) {
-            heroHtml = `
+    data.forEach(function () {
+        heroHtml = `
             <a href="hero-blog.html">
                 <div class="blog" id="${key}">
                     <div class="blog1-content">
@@ -55,32 +44,35 @@ function renderHtml(data, isInitialRender) {
                 </div>
             </a>
         `;
-        } else {
-            contentHtml += `
+
+        const imageSection = blog.sections.find(
+            (section) => section.type === "image"
+        );
+
+        heroImageUrl = imageSection.url;
+        heroEl.innerHTML = heroHtml;
+
+        const blog1El = document.getElementById("blog1");
+
+        blog1El.style.backgroundImage = `url(${heroImageUrl})`;
+        blog1El.style.backgroundSize = "cover";
+        blog1El.style.backgroundRepeat = "no-repeat";
+        blog1El.style.backgroundPosition = "center";
+
+        blog1El.classList.add = "blog-image";
+    });
+}
+
+function renderContent(data) {
+    let contentHtml = "";
+
+    data.every(function ([key, blog]) {
+        contentHtml += `
             <div class="blog" id="${key}">
                 <p class="blog-date">${blog.date}</p>
                 <h2 class="blog-title">${blog.title}</h2>
                 ${renderSections(key, blog.sections)}
             </div>`;
-        }
-
-        if (key === "blog1" && isInitialRender) {
-            const imageSection = blog.sections.find(
-                (section) => section.type === "image"
-            );
-
-            heroImageUrl = imageSection.url;
-            heroEl.innerHTML = heroHtml;
-
-            const blog1El = document.getElementById("blog1");
-
-            blog1El.style.backgroundImage = `url(${heroImageUrl})`;
-            blog1El.style.backgroundSize = "cover";
-            blog1El.style.backgroundRepeat = "no-repeat";
-            blog1El.style.backgroundPosition = "center";
-
-            blog1El.classList.add = "blog-image";
-        }
 
         if (
             (blogStartIndex % BLOGS_PER_PAGE === 0 && blogStartIndex > 0) ||
@@ -91,7 +83,7 @@ function renderHtml(data, isInitialRender) {
         }
 
         blogStartIndex++;
-
+        console.log(blogStartIndex);
         return true;
     });
 }
@@ -118,3 +110,18 @@ function renderSections(key, sections) {
     });
     return html;
 }
+
+// for subsequent render after initial render
+document.addEventListener("click", function (e) {
+    if (e.target.classList.contains("view-more")) {
+        if (data.length > blogStartIndex) {
+            blogStartIndex++;
+        }
+
+        const partialData = data.slice(blogStartIndex);
+
+        if (partialData.length >= 1) {
+            renderContent(partialData, false);
+        }
+    }
+});

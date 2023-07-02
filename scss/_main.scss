@@ -80,13 +80,23 @@
         min-height: 250px;
 
         .blog {
-            min-height: 300px;
+            min-height: 250px;
         }
     } 
     
-    .content .blog {
-        margin: 0 0 $spacingMedium 0;
-    }
+    .content {
+        min-height: 750px;
+
+        .blog {
+            min-height: 150px;
+            margin: 0 0 $spacingMedium 0;
+        }
+
+        .blog-content .blog-image {
+            max-height: 150px;
+        }
+    } 
+    
         
 }
 
