@@ -1,12 +1,12 @@
 .hero {
-    height: fit-content;
+    width: 100%;
     margin: 0 auto $spacingLarge auto;
 
     .blog {
         display: flex;
         flex-direction: column;
         justify-content: flex-start;
-        align-items: flex-start;
+        align-items: center;
         width: 100%;
         height: 100%;
         color: $lightColorText;
@@ -14,6 +14,7 @@
 
     .blog-title {
         font-size: $mediumFont;
+        max-width: 80%;
     }
 
     .blog1-content {
@@ -21,8 +22,7 @@
         flex-direction: column;
         justify-content: center;
         align-items: flex-start;
-        padding: $spacingLarge $spacingMedium $spacingMedium
-            $spacingMedium;
+        padding: $spacingLarge $spacingMedium $spacingMedium $spacingMedium;
         text-shadow: 1px 1px 2px #000000;
     }
 }
@@ -30,22 +30,24 @@
 .content {
     min-height: 1050px;
     padding: 0 $spacingLarge;
-    margin: $spacingLargest auto 0 auto;
+    margin: $spacingLargest 0 0 0;
 
     .blog {
         width: 100%;
         display: flex;
+        align-items: center;
         flex-direction: column;
-        margin: 0 auto;
+        margin: 0 0 $spacingMedium 0;
     }
 }
 
 .blog-image {
     order: 1;
     object-fit: cover;
-    height: fit-content;
+    height: 10em;
     min-height: 180px;
     max-height: 200px;
+    min-width: 300px;
     max-width: 310px;
 }
 
@@ -64,6 +66,7 @@
 
 .blog-content {
     font-size: $smallFont;
+    max-width: 22em;
     order: 4;
 }
 
@@ -75,50 +78,109 @@
     cursor: pointer;
 }
 
+// mobile screens
 @media only screen and (max-width: 350px) {
     .hero {
         min-height: 250px;
+        height: 300px;
+        margin-bottom: 0;
 
         .blog {
-            min-height: 250px;
+            display: flex;
+            justify-content: center;
         }
-    } 
-    
-    .content {
-        min-height: 750px;
-
-        .blog {
-            min-height: 150px;
-            margin: 0 0 $spacingMedium 0;
-        }
-
-        .blog-content .blog-image {
-            max-height: 150px;
-        }
-    } 
-    
-        
-}
-
-@media only screen and (min-width: 351px) and (max-width: 450px) {
-    .hero {
-        min-height: 250px;
     }
-    
+
     .content {
+        width: 20em;
+    }
+
+    .blogs-container {
         display: flex;
         flex-direction: column;
         justify-content: center;
         align-items: center;
 
         .blog {
-            width: 90%;
-            min-height: 300px;
-            margin: 0 0 $spacingMedium 0;
+            min-height: 250px;
+            .blog-image {
+                width: 240px;
+                min-width: 220px;
+                max-width: 250px;
+            }
+        }
+    }
+}
+
+@media only screen and (min-width: 351px) and (max-width: 488px) {
+    .hero {
+        min-height: 220px;
+
+        .blog {
+            height: 300px;
+            justify-content: center;
+            align-items: center;
+        }
+    }
+}
+
+// tablet and bigger
+@media only screen and (min-width: 490px) {
+    .hero {
+        height: 50vh;
+
+        .blog {
+            justify-content: flex-end;
+            align-items: flex-start;
+        }
+
+        .blog1-content {
+            width: 80%;
+            margin: $spacingMedium;
+
+            .blog-date {
+                font-size: $regularFont;
+            }
+
+            .blog-title {
+                font-size: $largerFont;
+                width: 70%;
+            }
+
+            .blog-content {
+                font-size: $regularFont;
+                width: 70%;
+            }
         }
     }
 
-    .blog-content {
-        font-size: 0.9rem;
+    .content {
+        margin: 0 auto;
+        min-height: fit-content;
+
+        .blogs-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(330px, 1fr));
+            gap: 1em;
+
+            .blog-date {
+                font-size: $regularFont;
+                
+            }
+
+            .blog-title {
+                font-size: 1.25rem;
+            }
+
+            .blog-content {
+                font-size: $regularFont;
+                min-width: 70%;
+                max-width: 80%;
+            }
+        }
+    }
+
+    .view-more {
+        font-size: 1.25rem;
     }
 }

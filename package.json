@@ -9,6 +9,7 @@
         "start": "vite",
         "dev": "vite",
         "build": "vite build",
+        "postbuild": "prettier --write 'src/css/*.css'",
         "preview": "vite preview",
         "sass": "sass --watch scss:src/css",
         "dev:watch": "concurrently \"npm run dev\" \"npm run sass\""

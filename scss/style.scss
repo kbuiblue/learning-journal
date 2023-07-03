@@ -15,6 +15,9 @@ html {
 
 body {
     margin: 0 auto;
+    min-width: 60%;
+    max-width: 1200px;
+    align-self: center;
 }
 
 h2 {
@@ -44,6 +47,7 @@ a:hover, a:active {
 
 
 footer {
+    width: 100%;
     text-align: center;
     background-color: $darkColorFooter;
 
@@ -52,6 +56,5 @@ footer {
         margin: 0;
     }
 }
-
 
 

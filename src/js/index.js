@@ -9,7 +9,7 @@ firebase.initializeApp(appSettings);
 const blogsInDB = firebase.database().ref("blogs-list");
 
 const heroEl = document.querySelector(".hero");
-const contentEl = document.querySelector(".content");
+const contentEl = document.querySelector(".blogs-container");
 
 const BLOGS_PER_PAGE = 3;
 
