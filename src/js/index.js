@@ -22,21 +22,20 @@ blogsInDB.on("value", function (snapshot) {
 
         if (data[0][0] === "blog1") {
             const heroArgs = {
-                "heroEl" : heroEl,
-                "key": data[0][0],
-                "blog": data[0][1]
-            }
+                heroEl: heroEl,
+                key: data[0][0],
+                blog: data[0][1],
+            };
             renderHero(heroArgs);
         }
 
         const contentArgs = {
-            "contentEl" : contentEl,
-            "data": data.slice(1),
-            "BLOGS_PER_PAGE": BLOGS_PER_PAGE
-        }
+            contentEl: contentEl,
+            data: data.slice(1),
+            BLOGS_PER_PAGE: BLOGS_PER_PAGE,
+        };
 
-       blogStartIndex = renderContent(contentArgs);
-
+        blogStartIndex = renderContent(contentArgs);
     } else {
         console.error("No data available");
     }
@@ -45,20 +44,17 @@ blogsInDB.on("value", function (snapshot) {
 // for subsequent render after initial render
 document.addEventListener("click", function (e) {
     if (e.target.classList.contains("view-more")) {
-        if (data.length > blogStartIndex) {
-            blogStartIndex++;
-        }
-        
         const partialData = data.slice(blogStartIndex);
-        
+
         let contentArgs = {
-            "contentEl" : contentEl,
-            "data": partialData,
-            "BLOGS_PER_PAGE": BLOGS_PER_PAGE
-        }
-        
+            contentEl: contentEl,
+            data: partialData,
+            BLOGS_PER_PAGE: BLOGS_PER_PAGE,
+        };
+
         if (partialData.length >= 1) {
             renderContent(contentArgs);
+            blogStartIndex += BLOGS_PER_PAGE;
         }
     }
 });

@@ -36,12 +36,16 @@ export function renderHero(heroArgs) {
 }
 
 export function renderContent(contentArgs) {
-    let contentHtml = "";
 
     let { contentEl, data, BLOGS_PER_PAGE } = contentArgs;
 
+    let renderedBlogsCount = 0;
+
     data.every(function ([key, blog]) {
-        contentHtml += `
+
+        renderedBlogsCount++;
+
+        let contentHtml = `
             <div class="blog" id="${key}">
                 <p class="blog-date">${blog.date}</p>
                 <h2 class="blog-title">${blog.title}</h2>
@@ -49,16 +53,19 @@ export function renderContent(contentArgs) {
             </div>`;
 
         if (
-            (blogStartIndex % BLOGS_PER_PAGE === 0 && blogStartIndex > 0) ||
+            (renderedBlogsCount % BLOGS_PER_PAGE === 0) ||
             data.length === 1
         ) {
-            contentEl.innerHTML += contentHtml;
+            contentEl.insertAdjacentHTML("beforeend", contentHtml);
             return false;
         }
 
-        blogStartIndex++;
+        contentEl.insertAdjacentHTML("beforeend", contentHtml);
         return true;
     });
+
+    blogStartIndex += renderedBlogsCount
+
     return blogStartIndex;
 }
 
