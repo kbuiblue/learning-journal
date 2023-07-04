@@ -1,53 +1,54 @@
-header {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-header nav {
+nav {
   display: flex;
   width: 100%;
   justify-content: space-between;
   align-items: center;
   padding: 1.5em 0;
 }
-header nav ul {
+nav ul {
   display: flex;
   margin: 0;
   width: 100%;
   align-items: baseline;
   text-transform: uppercase;
 }
-header nav ul a:hover, header nav ul a:active {
+nav ul a:hover,
+nav ul a:active {
   color: #fff;
   text-shadow: 2px 2px 3px #202020;
   text-decoration: none;
 }
-header nav li {
+nav li {
   width: max-content;
   list-style-type: none;
   cursor: pointer;
 }
-header .logo-container {
+
+.logo-container {
   display: flex;
   justify-content: flex-start;
   align-items: center;
   flex-wrap: nowrap;
-  width: 95%;
-  gap: 10px;
+  width: 100%;
+  gap: 5px;
 }
-header .logo {
+.logo-container h2 {
+  width: fit-content;
+}
+.logo-container .logo {
   width: 1.5em;
   height: 1.5em;
 }
+
 @media only screen and (max-width: 350px) {
-  header nav {
+  nav {
     width: 60%;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     transition: font-size 0.15s;
   }
-  header nav ul {
+  nav ul {
     width: 80%;
     flex-direction: column;
     justify-content: space-around;
@@ -56,7 +57,7 @@ header .logo {
     margin-top: 0.5em;
     gap: 0.5em;
   }
-  header nav ul li {
+  nav ul li {
     display: inline-block;
     padding: 0.25em;
     text-align: center;
@@ -65,57 +66,56 @@ header .logo {
     margin-top: 0.25em;
     border: 2px solid #000000;
   }
-  header nav ul li:active {
+  nav ul li:active {
     color: #fff;
     background-color: #000000;
   }
-  header nav ul a {
+  nav ul a {
     width: 100%;
   }
-  header nav .blog-image {
+  nav .blog-image {
     min-height: 150px;
     max-height: 200px;
     max-width: 310px;
   }
 }
 @media only screen and (min-width: 351px) and (max-width: 450px) {
-  header nav {
+  nav {
     width: 90%;
     margin: 0 1em;
   }
-  header nav ul {
+  nav ul {
     justify-content: flex-end;
     width: fit-content;
   }
-  header nav ul li {
+  nav ul li {
     margin-left: 1em;
     font-size: 0.9em;
     transition: font-size 0.15s;
   }
-  header nav .logo-container {
+  nav .logo-container {
     width: 120%;
   }
-  header h2 {
+  h2 {
     font-size: 0.9em;
     transition: font-size 0.15s;
   }
-  header .hero .blog {
+  .hero .blog {
     min-height: 250px;
   }
 }
 @media only screen and (min-width: 451px) {
-  header nav .logo-container {
+  nav .logo-container {
     margin-left: 2em;
   }
-  header nav ul {
+  nav ul {
     width: 30%;
     justify-content: space-evenly;
   }
-  header nav ul li {
+  nav ul li {
     margin-right: 1em;
   }
 }
-
 .hero {
   width: 100%;
   margin: 0 auto 2em auto;
@@ -126,7 +126,7 @@ header .logo {
   justify-content: flex-start;
   align-items: center;
   width: 100%;
-  height: 100%;
+  min-height: 35vh;
   color: #fff;
 }
 .hero .blog-title {
@@ -146,7 +146,7 @@ header .logo {
 .content {
   max-height: fit-content;
   min-height: 80vh;
-  padding: 0 2em;
+  padding: 0 1.5em;
   margin: 3em 0 1.5em 0;
 }
 .content .blog {
@@ -253,6 +253,7 @@ header .logo {
   .hero .blog {
     justify-content: flex-end;
     align-items: flex-start;
+    height: 50vh;
   }
   .hero .blog1-content {
     width: 80%;
@@ -264,7 +265,8 @@ header .logo {
   .hero .blog1-content .blog-title {
     font-size: 2.5rem;
     margin-bottom: 0.5em;
-    width: 60%;
+    max-height: 170px;
+    width: 70%;
   }
   .hero .blog1-content .blog-content {
     font-size: 1rem;
@@ -294,7 +296,7 @@ header .logo {
 }
 @media only screen and (min-width: 1050px) {
   .content {
-    min-height: 50vh;
+    min-height: 30vh;
   }
 }
 .footer-text {
@@ -324,11 +326,19 @@ html {
   font-family: "Source Sans 3", sans-serif;
 }
 
+header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #fff;
+}
+
 body {
   margin: 0 auto;
   min-width: 60%;
   max-width: 1200px;
   align-self: center;
+  background-color: #FAFAFA;
 }
 
 h2 {

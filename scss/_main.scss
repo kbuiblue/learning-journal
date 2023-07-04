@@ -8,7 +8,7 @@
         justify-content: flex-start;
         align-items: center;
         width: 100%;
-        height: 100%;
+        min-height: 35vh;
         color: $lightColorText;
     }
 
@@ -31,7 +31,7 @@
 .content {
     max-height: fit-content;
     min-height: 80vh;
-    padding: 0 $spacingLarge;
+    padding: 0 $spacingMedium;
     margin: $spacingLargest 0 $spacingMedium 0;
 
     .blog {
@@ -157,6 +157,7 @@
         .blog {
             justify-content: flex-end;
             align-items: flex-start;
+            height: 50vh;
         }
 
         .blog1-content {
@@ -170,7 +171,8 @@
             .blog-title {
                 font-size: $largerFont;
                 margin-bottom: $spacingSmall;
-                width: 60%;
+                max-height: 170px;
+                width: 70%;
             }
 
             .blog-content {
@@ -212,6 +214,6 @@
 
 @media only screen and (min-width: 1050px) {
     .content {
-        min-height: 50vh;
+        min-height: 30vh;
     }
 }

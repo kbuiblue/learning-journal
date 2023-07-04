@@ -12,12 +12,19 @@ html {
     font-family: $bodyFonts;
 }
 
+header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: $lightColorText;
+}
 
 body {
     margin: 0 auto;
     min-width: 60%;
     max-width: 1200px;
     align-self: center;
+    background-color: $lightBackground;
 }
 
 h2 {

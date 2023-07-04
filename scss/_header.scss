@@ -1,143 +1,141 @@
-header {
+nav {
     display: flex;
-    justify-content: center;
+    width: 100%;
+    justify-content: space-between;
     align-items: center;
+    padding: $spacingMedium 0;
 
-    nav {
+    ul {
         display: flex;
+        margin: 0;
         width: 100%;
-        justify-content: space-between;
-        align-items: center;
-        padding: $spacingMedium 0;
+        align-items: baseline;
+        text-transform: uppercase;
 
-        ul {
-            display: flex;
-            margin: 0;
-            width: 100%;
-            align-items: baseline;
-            text-transform: uppercase;
-
-            a:hover, a:active {
-                color: #fff;
-                text-shadow: 2px 2px 3px #202020;
-                text-decoration: none;
-            }
-        }
-
-        li {
-            width: max-content;
-            list-style-type: none;
-            cursor: pointer;
+        a:hover,
+        a:active {
+            color: #fff;
+            text-shadow: 2px 2px 3px #202020;
+            text-decoration: none;
         }
     }
 
-    .logo-container {
-        display: flex;
-        justify-content: flex-start;
-        align-items: center;
-        flex-wrap: nowrap;
-        width: 95%;
-        gap: 10px;
+    li {
+        width: max-content;
+        list-style-type: none;
+        cursor: pointer;
+    }
+}
+
+.logo-container {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    flex-wrap: nowrap;
+    width: 100%;
+    gap: 5px;
+
+    h2 {
+        width: fit-content;
     }
 
     .logo {
         width: $spacingMedium;
         height: $spacingMedium;
     }
+}
 
-    @media only screen and (max-width: 350px) {
-        nav {
-            width: 60%;
+@media only screen and (max-width: 350px) {
+    nav {
+        width: 60%;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        transition: $defaultTransition;
+
+        ul {
+            width: 80%;
             flex-direction: column;
-            justify-content: center;
+            justify-content: space-around;
             align-items: center;
-            transition: $defaultTransition;
+            padding: $spacingSmaller 0;
+            margin-top: $spacingSmall;
+            gap: $spacingSmall;
 
-            ul {
-                width: 80%;
-                flex-direction: column;
-                justify-content: space-around;
-                align-items: center;
-                padding: $spacingSmaller 0;
-                margin-top: $spacingSmall;
-                gap: $spacingSmall;
-
-                li {
-                    display: inline-block;
-                    padding: $spacingSmaller;
-                    text-align: center;
-                    align-self: center;;
-                    width: 100%;
-                    margin-top: $spacingSmaller;
-                    border: 2px solid $darkColorText;
-                }
-
-                li:active {
-                    color: $lightColorText;
-                    background-color: $darkColorText;
-                }
-
-                a {
-                    width: 100%;
-                }
+            li {
+                display: inline-block;
+                padding: $spacingSmaller;
+                text-align: center;
+                align-self: center;
+                width: 100%;
+                margin-top: $spacingSmaller;
+                border: 2px solid $darkColorText;
             }
 
-            .blog-image {
-                min-height: 150px;
-                max-height: 200px;
-                max-width: 310px;
+            li:active {
+                color: $lightColorText;
+                background-color: $darkColorText;
             }
+
+            a {
+                width: 100%;
+            }
+        }
+
+        .blog-image {
+            min-height: 150px;
+            max-height: 200px;
+            max-width: 310px;
+        }
+    }
+}
+
+@media only screen and (min-width: 351px) and (max-width: 450px) {
+    nav {
+        width: 90%;
+        margin: 0 1em;
+
+        ul {
+            justify-content: flex-end;
+            width: fit-content;
+
+            li {
+                margin-left: $spacingRegular;
+                font-size: 0.9em;
+                transition: $defaultTransition;
+            }
+        }
+
+        .logo-container {
+            width: 120%;
         }
     }
 
-    @media only screen and (min-width: 351px) and (max-width: 450px) {
-        nav {
-            width: 90%;
-            margin: 0 1em;
-
-            ul {
-                justify-content: flex-end;
-                width: fit-content;
-
-                li {
-                    margin-left: $spacingRegular;
-                    font-size: 0.9em;
-                    transition: $defaultTransition;
-                }
-            }
-
-            .logo-container {
-                width: 120%;
-            }
-        }
-
-        h2 {
-            font-size: 0.9em;
-            transition: $defaultTransition;
-        }
-
-        .hero {
-            .blog {
-                min-height: 250px;
-            }
-        }
+    h2 {
+        font-size: 0.9em;
+        transition: $defaultTransition;
     }
 
-    @media only screen and (min-width: 451px) {
-        nav {
-            .logo-container {
-                margin-left: $spacingLarge;
-            }
+    .hero {
+        .blog {
+            min-height: 250px;
+        }
+    }
+}
 
-            ul {
-                width: 30%;
-                justify-content: space-evenly;
+@media only screen and (min-width: 451px) {
+    nav {
+        .logo-container {
+            margin-left: $spacingLarge;
+        }
 
-                li {
-                    margin-right: $spacingRegular;
-                }
+        ul {
+            width: 30%;
+            justify-content: space-evenly;
+
+            li {
+                margin-right: $spacingRegular;
             }
         }
-        
     }
 }
