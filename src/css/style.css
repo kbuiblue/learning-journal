@@ -17,6 +17,11 @@ header nav ul {
   align-items: baseline;
   text-transform: uppercase;
 }
+header nav ul a:hover, header nav ul a:active {
+  color: #fff;
+  text-shadow: 2px 2px 3px #202020;
+  text-decoration: none;
+}
 header nav li {
   width: max-content;
   list-style-type: none;
@@ -40,6 +45,7 @@ header .logo {
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    transition: font-size 0.15s;
   }
   header nav ul {
     width: 80%;
@@ -84,12 +90,14 @@ header .logo {
   header nav ul li {
     margin-left: 1em;
     font-size: 0.9em;
+    transition: font-size 0.15s;
   }
   header nav .logo-container {
     width: 120%;
   }
   header h2 {
     font-size: 0.9em;
+    transition: font-size 0.15s;
   }
   header .hero .blog {
     min-height: 250px;
@@ -97,11 +105,11 @@ header .logo {
 }
 @media only screen and (min-width: 451px) {
   header nav .logo-container {
-    margin-left: 1em;
+    margin-left: 2em;
   }
   header nav ul {
     width: 30%;
-    justify-content: space-around;
+    justify-content: space-evenly;
   }
   header nav ul li {
     margin-right: 1em;
@@ -123,6 +131,7 @@ header .logo {
 }
 .hero .blog-title {
   font-size: 1.5rem;
+  transition: font-size 0.15s;
   max-width: 80%;
 }
 .hero .blog1-content {
@@ -135,9 +144,10 @@ header .logo {
 }
 
 .content {
-  min-height: 1050px;
+  max-height: fit-content;
+  min-height: 80vh;
   padding: 0 2em;
-  margin: 3em 0 0 0;
+  margin: 3em 0 1.5em 0;
 }
 .content .blog {
   width: 100%;
@@ -146,8 +156,7 @@ header .logo {
   flex-direction: column;
   margin: 0 0 1.5em 0;
 }
-
-.blog-image {
+.content .blog .blog-image {
   order: 1;
   object-fit: cover;
   height: 10em;
@@ -156,22 +165,22 @@ header .logo {
   min-width: 300px;
   max-width: 310px;
 }
-
-.blog-date {
+.content .blog .blog-date {
   text-transform: uppercase;
   font-size: 0.75rem;
+  transition: font-size 0.15s;
   margin: 1em 0 0.5em 0;
   order: 2;
 }
-
-.blog-title {
+.content .blog .blog-title {
   font-size: 1rem;
+  transition: font-size 0.15s;
   margin-bottom: 0.5em;
   order: 3;
 }
-
-.blog-content {
+.content .blog .blog-content {
   font-size: 0.75rem;
+  transition: font-size 0.15s;
   max-width: 22em;
   order: 4;
 }
@@ -180,8 +189,9 @@ header .logo {
   font-weight: 700;
   text-align: center;
   text-decoration: underline;
-  margin-bottom: 2em;
+  margin: 2em 0;
   cursor: pointer;
+  transition: font-size 0.15s;
 }
 
 @media only screen and (max-width: 350px) {
@@ -194,8 +204,12 @@ header .logo {
     display: flex;
     justify-content: center;
   }
-  .content {
-    width: 20em;
+  .hero .blog .blog-title {
+    margin-bottom: 0.5em;
+  }
+  .hero .blog .blog-content {
+    font-size: 0.75rem;
+    max-width: 90%;
   }
   .blogs-container {
     display: flex;
@@ -211,6 +225,9 @@ header .logo {
     min-width: 220px;
     max-width: 250px;
   }
+  .blogs-container .blog .blog-content {
+    width: 90%;
+  }
 }
 @media only screen and (min-width: 351px) and (max-width: 488px) {
   .hero {
@@ -220,6 +237,13 @@ header .logo {
     height: 300px;
     justify-content: center;
     align-items: center;
+  }
+  .hero .blog .blog-title {
+    margin-bottom: 0.5em;
+  }
+  .hero .blog .blog-content {
+    font-size: 0.8rem;
+    max-width: 80%;
   }
 }
 @media only screen and (min-width: 490px) {
@@ -239,19 +263,17 @@ header .logo {
   }
   .hero .blog1-content .blog-title {
     font-size: 2.5rem;
-    width: 70%;
+    margin-bottom: 0.5em;
+    width: 60%;
   }
   .hero .blog1-content .blog-content {
     font-size: 1rem;
     width: 70%;
-  }
-  .content {
-    margin: 0 auto;
-    min-height: fit-content;
+    max-width: 400px;
   }
   .content .blogs-container {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(330px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(330px, 1fr));
     gap: 1em;
   }
   .content .blogs-container .blog-date {
@@ -262,16 +284,22 @@ header .logo {
   }
   .content .blogs-container .blog-content {
     font-size: 1rem;
-    min-width: 70%;
-    max-width: 80%;
+    width: 80%;
+    max-width: 300px;
   }
   .view-more {
     font-size: 1.25rem;
+    transition: font-size 0.15s;
+  }
+}
+@media only screen and (min-width: 1050px) {
+  .content {
+    min-height: 50vh;
   }
 }
 .footer-text {
   font-size: 0.75rem;
-  padding: 2.5em;
+  padding: 4em;
   color: #fff;
 }
 
@@ -322,16 +350,11 @@ a {
   cursor: pointer;
 }
 
-a:hover, a:active {
-  color: #fff;
-  text-shadow: 2px 2px 3px #202020;
-  text-decoration: none;
-}
-
 footer {
   width: 100%;
   text-align: center;
   background-color: #202020;
+  margin-top: 2em;
 }
 footer h4,
 footer p {

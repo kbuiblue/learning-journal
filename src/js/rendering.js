@@ -7,7 +7,7 @@ export function renderHero(heroArgs) {
     const { heroEl, key, blog } = heroArgs;
 
     heroHtml = `
-            <a href="hero-blog.html">
+            <a href="/src/html/hero-blog.html">
                 <div class="blog" id="${key}">
                     <div class="blog1-content">
                         <p class="blog-date">${blog.date}</p>

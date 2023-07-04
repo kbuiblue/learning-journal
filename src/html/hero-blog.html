@@ -1,4 +1,3 @@
-<!DOCTYPE html>
 <html lang="en">
     <head>
         <meta charset="UTF-8" />
@@ -8,8 +7,8 @@
             rel="stylesheet"
             href="node_modules\normalize.css\normalize.css"
         />
-        <link rel="stylesheet" href="src/css/style-reset.css" />
-        <link rel="stylesheet" href="src/css/style.css" />
+        <link rel="stylesheet" href="/src/css/style-reset.css" />
+        <link rel="stylesheet" href="/src/css/style.css" />
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
         <link
@@ -22,20 +21,24 @@
     <body>
         <header>
             <nav>
-                <div class="logo-container">
-                    <img class="logo" src="img\image 17.png" />
-                    <h2>My Learning Journal</h2>
-                </div>
+                <a href="/index.html">
+                    <div class="logo-container">
+                        <img class="logo" src="/img/image 17.png" />
+                        <h2>My Learning Journal</h2>
+                    </div>
+                </a>
                 <ul>
-                    <a href="index.html"><li>Home</li></a>
-                    <a href="about-me.html"><li>About Me</li></a>
+                    <a href="/index.html"><li>Home</li></a>
+                    <a href="/src/html/about-me.html"><li>About Me</li></a>
                 </ul>
             </nav>
         </header>
         <main>
             <section class="hero"></section>
 
-            <section class="content"></section>
+            <section class="content">
+                <div class="blogs-container"></div>
+            </section>
         </main>
 
         <footer>

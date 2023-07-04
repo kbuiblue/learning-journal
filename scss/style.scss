@@ -39,17 +39,12 @@ a {
     cursor: pointer;
 } 
 
-a:hover, a:active {
-    color: #fff;
-    text-shadow: 2px 2px 3px #202020;
-    text-decoration: none;
-}
-
 
 footer {
     width: 100%;
     text-align: center;
     background-color: $darkColorFooter;
+    margin-top: $spacingLarge;
 
     h4,
     p {

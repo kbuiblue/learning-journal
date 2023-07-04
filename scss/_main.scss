@@ -14,6 +14,7 @@
 
     .blog-title {
         font-size: $mediumFont;
+        transition: $defaultTransition;
         max-width: 80%;
     }
 
@@ -28,9 +29,10 @@
 }
 
 .content {
-    min-height: 1050px;
+    max-height: fit-content;
+    min-height: 80vh;
     padding: 0 $spacingLarge;
-    margin: $spacingLargest 0 0 0;
+    margin: $spacingLargest 0 $spacingMedium 0;
 
     .blog {
         width: 100%;
@@ -38,44 +40,49 @@
         align-items: center;
         flex-direction: column;
         margin: 0 0 $spacingMedium 0;
+        
+        .blog-image {
+            order: 1;
+            object-fit: cover;
+            height: 10em;
+            min-height: 180px;
+            max-height: 200px;
+            min-width: 300px;
+            max-width: 310px;
+        }
+        
+        .blog-date {
+            text-transform: uppercase;
+            font-size: $smallFont;
+            transition: $defaultTransition;
+            margin: $spacingRegular 0 $spacingSmall 0;
+            order: 2;
+        }
+        
+        .blog-title {
+            font-size: $regularFont;
+            transition: $defaultTransition;
+            margin-bottom: $spacingSmall;
+            order: 3;
+        }
+        
+        .blog-content {
+            font-size: $smallFont;
+            transition: $defaultTransition;
+            max-width: 22em;
+            order: 4;
+        }
     }
-}
-
-.blog-image {
-    order: 1;
-    object-fit: cover;
-    height: 10em;
-    min-height: 180px;
-    max-height: 200px;
-    min-width: 300px;
-    max-width: 310px;
-}
-
-.blog-date {
-    text-transform: uppercase;
-    font-size: $smallFont;
-    margin: $spacingRegular 0 $spacingSmall 0;
-    order: 2;
-}
-
-.blog-title {
-    font-size: $regularFont;
-    margin-bottom: $spacingSmall;
-    order: 3;
-}
-
-.blog-content {
-    font-size: $smallFont;
-    max-width: 22em;
-    order: 4;
+    
 }
 
 .view-more {
     font-weight: $boldFont;
     text-align: center;
     text-decoration: underline;
-    margin-bottom: $spacingLarge;
+    margin: $spacingLarge 0;
     cursor: pointer;
+    transition: $defaultTransition;
 }
 
 // mobile screens
@@ -88,11 +95,16 @@
         .blog {
             display: flex;
             justify-content: center;
-        }
-    }
 
-    .content {
-        width: 20em;
+            .blog-title {
+                margin-bottom: $spacingSmall;
+            }
+
+            .blog-content {
+                font-size: $smallFont;
+                max-width: 90%;
+            }
+        }
     }
 
     .blogs-container {
@@ -108,6 +120,10 @@
                 min-width: 220px;
                 max-width: 250px;
             }
+
+            .blog-content {
+                width: 90%;
+            }
         }
     }
 }
@@ -120,6 +136,15 @@
             height: 300px;
             justify-content: center;
             align-items: center;
+
+            .blog-title {
+                margin-bottom: $spacingSmall;
+            }
+
+            .blog-content {
+                font-size: 0.8rem;
+                max-width: 80%;
+            }
         }
     }
 }
@@ -144,28 +169,27 @@
 
             .blog-title {
                 font-size: $largerFont;
-                width: 70%;
+                margin-bottom: $spacingSmall;
+                width: 60%;
             }
 
             .blog-content {
                 font-size: $regularFont;
                 width: 70%;
+                max-width: 400px;
             }
         }
     }
 
     .content {
-        margin: 0 auto;
-        min-height: fit-content;
 
         .blogs-container {
             display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(330px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(330px, 1fr));
             gap: 1em;
 
             .blog-date {
                 font-size: $regularFont;
-                
             }
 
             .blog-title {
@@ -174,13 +198,20 @@
 
             .blog-content {
                 font-size: $regularFont;
-                min-width: 70%;
-                max-width: 80%;
+                width: 80%;
+                max-width: 300px;
             }
         }
     }
 
     .view-more {
         font-size: 1.25rem;
+        transition: $defaultTransition;
+    }
+}
+
+@media only screen and (min-width: 1050px) {
+    .content {
+        min-height: 50vh;
     }
 }
