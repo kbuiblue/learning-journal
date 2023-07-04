@@ -15,6 +15,13 @@ export default defineConfig({
     },
     build: {
         sourcemap: true,
+        rollupOptions: {
+            input: {
+              main: 'index.html',
+              "about-me": '/src/html/about-me.html',
+              'hero-blog': '/src/html/hero-blog.html',
+            }
+          }
     },
     optimizeDeps: {
         entries: ["./index.html", "./src/index.js"],
