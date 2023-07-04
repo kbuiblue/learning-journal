@@ -14,8 +14,5 @@
         "sass": "sass --watch scss:src/css",
         "dev:watch": "concurrently \"npm run dev\" \"npm run sass\""
     },
-    "type": "module",
-    "dependencies": {
-        "normalize.css": "^8.0.1"
-    }
+    "type": "module"
 }
