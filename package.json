@@ -2,6 +2,7 @@
     "name": "learning-journal",
     "devDependencies": {
         "concurrently": "^8.2.0",
+        "prettier": "^2.8.8",
         "sass": "^1.63.6",
         "vite": "latest"
     },
