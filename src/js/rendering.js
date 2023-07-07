@@ -4,7 +4,7 @@ export function renderHero(heroArgs) {
     const path = window.location.pathname;
     const page = path.split("/").pop();
 
-    if (page === "index.html") {
+    if (page === "index.html" || page === "") {
         renderIndexHero(heroArgs);
     } else if (page === "hero-blog.html") {
         renderHeroBlogHero(heroArgs);
