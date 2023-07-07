@@ -8,6 +8,12 @@
     box-sizing: border-box;
 }
 
+html,
+body {
+    max-width: 100%;
+    overflow-x: hidden;
+}
+
 html {
     font-family: $bodyFonts;
 }
@@ -23,7 +29,6 @@ body {
     margin: 0 auto;
     min-width: 60%;
     max-width: 1200px;
-    align-self: center;
     background-color: $lightBackground;
 }
 

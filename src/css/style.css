@@ -11,6 +11,7 @@ nav ul {
   width: 100%;
   align-items: baseline;
   text-transform: uppercase;
+  transition: font-size 0.15s;
 }
 nav ul a:hover,
 nav ul a:active {
@@ -32,8 +33,9 @@ nav li {
   width: 100%;
   gap: 5px;
 }
-.logo-container h2 {
+.logo-container .logo-text {
   width: fit-content;
+  transition: font-size 0.15s;
 }
 .logo-container .logo {
   width: 1.5em;
@@ -46,7 +48,6 @@ nav li {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    transition: font-size 0.15s;
   }
   nav ul {
     width: 80%;
@@ -91,16 +92,14 @@ nav li {
   nav ul li {
     margin-left: 1em;
     font-size: 0.9em;
-    transition: font-size 0.15s;
   }
   nav .logo-container {
     width: 120%;
   }
   h2 {
     font-size: 0.9em;
-    transition: font-size 0.15s;
   }
-  .hero .blog {
+  .index-hero .blog {
     min-height: 250px;
   }
 }
@@ -116,11 +115,20 @@ nav li {
     margin-right: 1em;
   }
 }
-.hero {
+@media only screen and (min-width: 1050px) {
+  .logo-container .logo {
+    width: 1.75em;
+    height: 1.75em;
+  }
+  .logo-container .logo-text {
+    font-size: 1.25em;
+  }
+}
+.index-hero {
   width: 100%;
   margin: 0 auto 2em auto;
 }
-.hero .blog {
+.index-hero .blog {
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
@@ -129,12 +137,12 @@ nav li {
   min-height: 35vh;
   color: #fff;
 }
-.hero .blog-title {
+.index-hero .blog-title {
   font-size: 1.5rem;
   transition: font-size 0.15s;
   max-width: 80%;
 }
-.hero .blog1-content {
+.index-hero .blog1-content {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -143,11 +151,48 @@ nav li {
   text-shadow: 1px 1px 2px #000000;
 }
 
+.hero-blog {
+  width: 100%;
+}
+.hero-blog .blog1-content {
+  margin: 3em 0 3em 3em;
+}
+.hero-blog .blog-date {
+  margin-bottom: 1.5em;
+}
+.hero-blog .blog-title {
+  margin-bottom: 1em;
+  font-size: 2rem;
+  font-weight: 700;
+}
+.hero-blog .blog-image {
+  width: 125%;
+  text-align: center;
+  position: relative;
+  right: 15%;
+}
+.hero-blog .blog-heading {
+  margin: 1em 0;
+  font-size: 1.5rem;
+  font-weight: 700;
+}
+.hero-blog .blog-content {
+  margin-bottom: 1.5em;
+  max-width: 90%;
+}
+
 .content {
   max-height: fit-content;
   min-height: 80vh;
   padding: 0 1.5em;
   margin: 3em 0 1.5em 0;
+}
+.content .recent-title {
+  font-weight: 700;
+  font-size: 1.25rem;
+  text-align: center;
+  margin: 1em 0;
+  transition: font-size 0.15s;
 }
 .content .blog {
   width: 100%;
@@ -195,21 +240,36 @@ nav li {
 }
 
 @media only screen and (max-width: 350px) {
-  .hero {
+  .index-hero {
     min-height: 250px;
     height: 300px;
     margin-bottom: 0;
   }
-  .hero .blog {
+  .index-hero .blog {
     display: flex;
     justify-content: center;
   }
-  .hero .blog .blog-title {
+  .index-hero .blog .blog-title {
     margin-bottom: 0.5em;
   }
-  .hero .blog .blog-content {
+  .index-hero .blog .blog-content {
     font-size: 0.75rem;
     max-width: 90%;
+  }
+  .hero-blog .blog1-content {
+    margin: 3em 1.5em 3em 1.5em;
+  }
+  .hero-blog .blog1-content .blog-date {
+    font-size: 0.75rem;
+  }
+  .hero-blog .blog1-content .blog-title {
+    font-size: 1.5rem;
+  }
+  .hero-blog .blog1-content .blog-heading {
+    font-size: 1.25rem;
+  }
+  .hero-blog .blog1-content .blog-content {
+    font-size: 0.75rem;
   }
   .blogs-container {
     display: flex;
@@ -230,45 +290,46 @@ nav li {
   }
 }
 @media only screen and (min-width: 351px) and (max-width: 488px) {
-  .hero {
+  .index-hero {
     min-height: 220px;
   }
-  .hero .blog {
+  .index-hero .blog {
     height: 300px;
     justify-content: center;
     align-items: center;
   }
-  .hero .blog .blog-title {
+  .index-hero .blog .blog-title {
     margin-bottom: 0.5em;
   }
-  .hero .blog .blog-content {
+  .index-hero .blog .blog-content {
     font-size: 0.8rem;
     max-width: 80%;
   }
 }
-@media only screen and (min-width: 490px) {
-  .hero {
+@media only screen and (min-width: 502px) {
+  .index-hero {
     height: 50vh;
   }
-  .hero .blog {
+  .index-hero .blog {
     justify-content: flex-end;
     align-items: flex-start;
     height: 50vh;
   }
-  .hero .blog1-content {
+  .index-hero .blog1-content {
     width: 80%;
     margin: 1.5em;
   }
-  .hero .blog1-content .blog-date {
+  .index-hero .blog1-content .blog-date {
     font-size: 1rem;
   }
-  .hero .blog1-content .blog-title {
+  .index-hero .blog1-content .blog-title {
     font-size: 2.5rem;
     margin-bottom: 0.5em;
-    max-height: 170px;
-    width: 70%;
+    max-height: 140px;
+    width: 80%;
+    max-width: 550px;
   }
-  .hero .blog1-content .blog-content {
+  .index-hero .blog1-content .blog-content {
     font-size: 1rem;
     width: 70%;
     max-width: 400px;
@@ -322,6 +383,12 @@ nav li {
   box-sizing: border-box;
 }
 
+html,
+body {
+  max-width: 100%;
+  overflow-x: hidden;
+}
+
 html {
   font-family: "Source Sans 3", sans-serif;
 }
@@ -337,7 +404,6 @@ body {
   margin: 0 auto;
   min-width: 60%;
   max-width: 1200px;
-  align-self: center;
   background-color: #FAFAFA;
 }
 
