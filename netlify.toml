@@ -1,4 +1,9 @@
 [[redirects]]
+  from = "/"
+  to = "/index.html"
+  status = 200
+
+[[redirects]]
   from = "/about-me"
   to = "/src/html/about-me.html"
   status = 200
