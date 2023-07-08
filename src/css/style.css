@@ -303,7 +303,9 @@ nav li {
     font-size: 0.75rem;
   }
   .hero-blog .blog1-content .blog-image {
-    height: 25vh;
+    height: fit-content;
+    transform: translateX(0);
+    width: 100%;
   }
   .hero-blog .blog1-content .blog-title {
     font-size: 1.5rem;

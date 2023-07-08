@@ -206,7 +206,9 @@
             }
 
             .blog-image {
-                height: 25vh;
+                height: fit-content;
+                transform: translateX(0);
+                width: 100%;
             }
 
             .blog-title {
