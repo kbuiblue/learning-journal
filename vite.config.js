@@ -6,7 +6,7 @@ export default defineConfig({
         port: 5173,
     },
     css: {
-        devSourcemap: true, 
+        devSourcemap: true,
         preprocessorOptions: {
             scss: {
                 additionalData: `@import "./src/scss/style.scss";`,
@@ -17,15 +17,14 @@ export default defineConfig({
         sourcemap: true,
         rollupOptions: {
             input: {
-              main: 'index.html',
-              "about-me": '/src/html/about-me.html',
-              'hero-blog': '/src/html/hero-blog.html',
-            }
-          }
+                main: "index.html",
+                "about-me": "/src/html/about-me.html",
+                "hero-blog": "/src/html/hero-blog.html",
+            },
+        },
     },
     optimizeDeps: {
         entries: ["./index.html", "./src/index.js"],
         include: ["sass"],
     },
 });
-

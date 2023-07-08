@@ -7,3 +7,8 @@
   from = "/hero-blog"
   to = "/src/html/hero-blog.html"
   status = 200
+
+[[redirects]]
+  from = "/about-me"
+  to = "/src/html/about-me.html"
+  status = 200
