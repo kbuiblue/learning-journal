@@ -1,11 +1,94 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>About Me</title>
-</head>
-<body>
-    <section id="hero-el"></section>
-</body>
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>About Me</title>
+        <link rel="stylesheet" href="/src/css/style-reset.css" />
+        <link rel="stylesheet" href="/src/css/style.css" />
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&family=Source+Sans+3:wght@200;300;400;500;700;800;900&display=swap"
+            rel="stylesheet"
+        />
+        <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-database.js"></script>
+    </head>
+    <body>
+        <header>
+            <nav>
+                <a href="/index.html">
+                    <div class="logo-container">
+                        <img class="logo" src="/img/image 17.png" />
+                        <h2 class="logo-text">My Learning Journal</h2>
+                    </div>
+                </a>
+                <ul>
+                    <a href="/index.html"><li>Home</li></a>
+                    <a href="/src/html/about-me.html"><li>About Me</li></a>
+                </ul>
+            </nav>
+        </header>
+        <main>
+            <section class="about-me">
+                <div class="me-hero">
+                    <img class="me-img" src="/img/image 18.png" />
+                    <div class="me-intro">
+                    <h2 class="me-heading">
+                        Hi there! My name is Roku and welcome to my learning
+                        journal.
+                    </h2>
+                    <p class="me-text">
+                        After several months of learning in the Frontend
+                        Developer Career Path, I've made the big jump over to
+                        the Bootcamp to get expert code reviews of my Solo
+                        Projects projects and meet like-minded peers.
+                    </p>
+                </div>
+                </div>
+
+                <div class="me-details">
+                    <h5 class="details-heading">
+                        How I stay committed to learning
+                    </h5>
+                    <p class="details-paragraph">
+                        I like to think of myself as a lifelong learner. I used
+                        to spend hours and hours learning, then try to create
+                        simple projects using what I learned or work new
+                        techniques into existing projects.
+                    </p>
+                    <p class="details-paragraph">
+                        While that was fun, I felt like it would be helpful to
+                        share what I was learning and most things about my
+                        journey with the world.
+                    </p>
+                    <h5 class="details-heading">How I got started</h5>
+                    <p class="details-paragraph">
+                        I started simple and gradually grew my learning journal
+                        site. I would take notes about what I was learning.
+                        After each learning session, I'd use my notes to not
+                        only reflect on what I learned but also write short
+                        summaries of what I learned using my own words.
+                    </p>
+                    <p class="details-paragraph">
+                        That helped me grow what I was learning, and I realized
+                        that posting my learning summaries was also helping
+                        others learn and stay motivated.
+                    </p>
+                </div>
+            </section>
+            <section class="content">
+                <h5 class="recent-title">Recent Posts</h5>
+                <div class="blogs-container"></div>
+            </section>
+            <footer>
+                <div class="footer-text">
+                    <h4>My Learning Journal</h4>
+                    <p>Copyright &#169; 2022</p>
+                </div>
+            </footer>
+            <script src="/src/js/index.js" type="module"></script>
+        </main>
+    </body>
 </html>

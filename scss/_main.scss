@@ -30,43 +30,89 @@
 
 .hero-blog {
     width: 100%;
-
+    height: fit-content;
+    
     .blog1-content {
         margin: $spacingLargest 0 $spacingLargest $spacingLargest;
+        min-height: 900px;
+        height: 50%;
+
+        .blog-date {
+            margin-bottom: $spacingMedium;
+        }
+    
+        .blog-title {
+            margin-bottom: $spacingRegular;
+            font-size: $largeFont;
+            font-weight: $boldFont;
+        }
+    
+        .blog-image {
+            width: 125%;
+            text-align: center;
+            position: relative;
+            transform: translateX(-15%);
+        }
+    
+        .blog-heading {
+            margin: $spacingRegular 0;
+            font-size: $mediumFont;
+            font-weight: $boldFont;
+        }
+    
+        .blog-content {
+            margin-bottom: $spacingMedium;
+            max-width: 90%;
+        }
+    }
+}
+
+.about-me {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    margin: $spacingLarge 0 4em 0;
+
+    .me-hero {
+        margin: $spacingLarge 0;
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+
+        .me-img {
+            margin: $spacingLarge;
+        }
+
+        .me-heading {
+            font-size: $largeFont;
+            font-weight: $blackFont;
+            width: 80%;
+            margin-bottom: $spacingSmall;
+        }
+
+        .me-text {
+            width: 90%;
+        }
     }
 
-    .blog-date {
-        margin-bottom: $spacingMedium;
-    }
+    .me-details {
+        margin-left: 7em;
 
-    .blog-title {
-        margin-bottom: $spacingRegular;
-        font-size: $largeFont;
-        font-weight: $boldFont;
-    }
+        .details-heading {
+            font-size: $mediumFont;
+            font-weight: $boldFont;
+            margin: $spacingRegular 0 $spacingSmall 0;
+        }
 
-    .blog-image {
-        width: 125%;
-        text-align: center;
-        position: relative;
-        right: 15%;
+        .details-paragraph {
+            margin-bottom: $spacingSmall;
+            width: 90%;
+        }
     }
-
-    .blog-heading {
-        margin: $spacingRegular 0;
-        font-size: $mediumFont;
-        font-weight: $boldFont;
-    }
-
-    .blog-content {
-        margin-bottom: $spacingMedium;
-        max-width: 90%;
-    }
-
 }
 
 .content {
-    max-height: fit-content;
+    height: fit-content;
     min-height: 80vh;
     padding: 0 $spacingMedium;
     margin: $spacingLargest 0 $spacingMedium 0;
@@ -159,6 +205,10 @@
                 font-size: $smallFont;
             }
 
+            .blog-image {
+                height: 25vh;
+            }
+
             .blog-title {
                 font-size: $mediumFont;
             }
@@ -172,6 +222,39 @@
             }
         }
     }
+
+    .about-me {
+        .me-hero {
+            flex-direction: column;
+            align-items: flex-start;
+            justify-content: flex-start;
+            margin: $spacingLarge $spacingLarge;
+
+            .me-img {
+                width: 50%;
+                width: 50%;
+                margin-left: 0;
+            }
+
+            .me-heading {
+                font-size: $largeFont;
+                width: 100%;
+            }
+        }
+
+        .me-details {
+            margin: 0 $spacingLarge;
+
+            .details-heading {
+                width: 90%;
+            }
+
+            .details-paragraph {
+                margin-bottom: $spacingRegular;
+            }
+        }
+    }
+
 
     .blogs-container {
         display: flex;
@@ -213,9 +296,57 @@
             }
         }
     }
+
+    .about-me {
+        margin-top: 0;
+
+        .me-hero {
+            flex-direction: column;
+            align-items: flex-start;
+            justify-content: flex-start;
+            margin: $spacingLarge $spacingLarge;
+
+            .me-img {
+                width: 40%;
+                width: 40%;
+                margin-left: 0;
+            }
+
+            .me-heading {
+                font-size: $largeFont;
+                width: 100%;
+            }
+        }
+
+        .me-details {
+            margin: 0 $spacingLarge;
+
+            .details-heading {
+                width: 90%;
+            }
+
+            .details-paragraph {
+                margin-bottom: $spacingRegular;
+            }
+        }
+    }
 }
 
 // tablet and bigger
+@media only screen and (min-width: 489px) and (max-width: 1150px) {
+    .about-me {
+        .me-hero {
+            .me-img {
+                width: 20%;
+                max-width: 25%;
+                height: 20%;
+                max-height: 25%;
+            }
+        }
+    }
+}
+
+
 @media only screen and (min-width: 502px) {
     .index-hero {
         height: 50vh;
@@ -279,6 +410,14 @@
 }
 
 @media only screen and (min-width: 1050px) {
+    .hero-blog {
+        .blog1-content {
+            .blog-image {
+                height: 800px;
+            }
+        }
+    }
+    
     .content {
         min-height: 30vh;
     }

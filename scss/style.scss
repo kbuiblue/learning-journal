@@ -54,6 +54,7 @@ a {
 
 footer {
     width: 100%;
+    max-height: fit-content;
     text-align: center;
     background-color: $darkColorFooter;
     margin-top: $spacingLarge;

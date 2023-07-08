@@ -153,36 +153,76 @@ nav li {
 
 .hero-blog {
   width: 100%;
+  height: fit-content;
 }
 .hero-blog .blog1-content {
   margin: 3em 0 3em 3em;
+  min-height: 900px;
+  height: 50%;
 }
-.hero-blog .blog-date {
+.hero-blog .blog1-content .blog-date {
   margin-bottom: 1.5em;
 }
-.hero-blog .blog-title {
+.hero-blog .blog1-content .blog-title {
   margin-bottom: 1em;
   font-size: 2rem;
   font-weight: 700;
 }
-.hero-blog .blog-image {
+.hero-blog .blog1-content .blog-image {
   width: 125%;
   text-align: center;
   position: relative;
-  right: 15%;
+  transform: translateX(-15%);
 }
-.hero-blog .blog-heading {
+.hero-blog .blog1-content .blog-heading {
   margin: 1em 0;
   font-size: 1.5rem;
   font-weight: 700;
 }
-.hero-blog .blog-content {
+.hero-blog .blog1-content .blog-content {
   margin-bottom: 1.5em;
   max-width: 90%;
 }
 
+.about-me {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  margin: 2em 0 4em 0;
+}
+.about-me .me-hero {
+  margin: 2em 0;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+.about-me .me-hero .me-img {
+  margin: 2em;
+}
+.about-me .me-hero .me-heading {
+  font-size: 2rem;
+  font-weight: 900;
+  width: 80%;
+  margin-bottom: 0.5em;
+}
+.about-me .me-hero .me-text {
+  width: 90%;
+}
+.about-me .me-details {
+  margin-left: 7em;
+}
+.about-me .me-details .details-heading {
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin: 1em 0 0.5em 0;
+}
+.about-me .me-details .details-paragraph {
+  margin-bottom: 0.5em;
+  width: 90%;
+}
+
 .content {
-  max-height: fit-content;
+  height: fit-content;
   min-height: 80vh;
   padding: 0 1.5em;
   margin: 3em 0 1.5em 0;
@@ -262,6 +302,9 @@ nav li {
   .hero-blog .blog1-content .blog-date {
     font-size: 0.75rem;
   }
+  .hero-blog .blog1-content .blog-image {
+    height: 25vh;
+  }
   .hero-blog .blog1-content .blog-title {
     font-size: 1.5rem;
   }
@@ -270,6 +313,30 @@ nav li {
   }
   .hero-blog .blog1-content .blog-content {
     font-size: 0.75rem;
+  }
+  .about-me .me-hero {
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    margin: 2em 2em;
+  }
+  .about-me .me-hero .me-img {
+    width: 50%;
+    width: 50%;
+    margin-left: 0;
+  }
+  .about-me .me-hero .me-heading {
+    font-size: 2rem;
+    width: 100%;
+  }
+  .about-me .me-details {
+    margin: 0 2em;
+  }
+  .about-me .me-details .details-heading {
+    width: 90%;
+  }
+  .about-me .me-details .details-paragraph {
+    margin-bottom: 1em;
   }
   .blogs-container {
     display: flex;
@@ -304,6 +371,41 @@ nav li {
   .index-hero .blog .blog-content {
     font-size: 0.8rem;
     max-width: 80%;
+  }
+  .about-me {
+    margin-top: 0;
+  }
+  .about-me .me-hero {
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    margin: 2em 2em;
+  }
+  .about-me .me-hero .me-img {
+    width: 40%;
+    width: 40%;
+    margin-left: 0;
+  }
+  .about-me .me-hero .me-heading {
+    font-size: 2rem;
+    width: 100%;
+  }
+  .about-me .me-details {
+    margin: 0 2em;
+  }
+  .about-me .me-details .details-heading {
+    width: 90%;
+  }
+  .about-me .me-details .details-paragraph {
+    margin-bottom: 1em;
+  }
+}
+@media only screen and (min-width: 489px) and (max-width: 1150px) {
+  .about-me .me-hero .me-img {
+    width: 20%;
+    max-width: 25%;
+    height: 20%;
+    max-height: 25%;
   }
 }
 @media only screen and (min-width: 502px) {
@@ -356,6 +458,9 @@ nav li {
   }
 }
 @media only screen and (min-width: 1050px) {
+  .hero-blog .blog1-content .blog-image {
+    height: 800px;
+  }
   .content {
     min-height: 30vh;
   }
@@ -366,19 +471,6 @@ nav li {
   color: #fff;
 }
 
-.skeleton {
-  opacity: 0.7;
-  animation: skeleton-loading 1s linear infinite alternate;
-}
-
-@keyframes skeleton-loading {
-  0% {
-    background-color: hsl(200, 20%, 70%);
-  }
-  100% {
-    background-color: hsl(200, 20%, 95%);
-  }
-}
 * {
   box-sizing: border-box;
 }
@@ -428,6 +520,7 @@ a {
 
 footer {
   width: 100%;
+  max-height: fit-content;
   text-align: center;
   background-color: #202020;
   margin-top: 2em;
